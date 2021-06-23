@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html ng-app="MyFirstApp" lang="es">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
@@ -9,8 +9,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Controller  -->
+  <script type="text/javascript" src="js/controller.js"></script>
 </head>
 <body>
 
@@ -20,7 +21,7 @@
   <!--cuando sea responvise se oculta el menu-->
   <div class="nav-wrapper nav valign-wrapper" >
     <img src="img/logo.png" alt="">
-      <h5>Paletas Artesanales</h5>
+      <h5 id="labelTitle" >Paletas Artesanales</h5>
           <!--antes de logo-->
     <a href="#" data-target="nav-mobile" class="sidenav-trigger"></a>
     <!--hide-on-med-and-down (ocultar cuando es responsive)-->
@@ -53,113 +54,278 @@
   
   <!-- Sabores -->
   <section id="sabores" class="container">
-   <h2 class="center">Sabores tradicionales $15</h2>
+   <h3 class="center">Sabores Gourmet $30</h3>
    <div class="row">
-      <!--oreo-->
+      <!-------nuez entera------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
+            <div class="right">
+              <a id='btn-send-nuez-entera' onclick="sendMessage('btn-send-nuez-entera')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
+            <img class="activator" src="img/nuez-entera.jpg">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('nuez-entera','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-nuez-entera' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('nuez-entera','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
+          </div>
+        </div>           
+      </div>
+      <!-------pinon------->      
+      <div class="col s12 m12 l4">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <div class="right">
+              <a id='btn-send-pinon' onclick="sendMessage('btn-send-pinon')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
+            <img class="activator" src="img/pinon.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('pinon','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-pinon' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('pinon','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
+          </div>
+        </div>           
+      </div>      
+      <!-------pistache------->      
+      <div class="col s12 m12 l4">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <div class="right">
+              <a id='btn-send-pistache' onclick="sendMessage('btn-send-pistache')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
+            <img class="activator" src="img/pistache.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('pistache','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-pistache' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('pistache','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
+          </div>
+        </div>           
+      </div>            
+   </div>
+   <h3 class="center">Sabores Tradicionales $15</h3>
+   <!---First Row-----> 
+   <div class="row">
+      <!-------oreo------->      
+      <div class="col s12 m12 l4">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <div class="right">
+              <a id='btn-send-oreo' onclick="sendMessage('btn-send-oreo')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
             <img class="activator" src="img/oreo.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('oreo','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-oreo' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('oreo','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
       </div>
-      <!--fresa-->
+      <!-------fresa------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
+            <div class="right">
+              <a id='btn-send-fresa-leche' onclick="sendMessage('btn-send-fresa-leche')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
             <img class="activator" src="img/fresa.jpg">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('fresa-leche','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-fresa-leche' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('fresa-leche','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
       </div>
-      <!--fresa con queso-->
+      <!-------fresa con queso------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="img/fresa con queso.png">
+            <div class="right">
+              <a id='btn-send-fresa-queso' onclick="sendMessage('btn-send-fresa-queso')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
+            <img class="activator" src="img/fresa-queso.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('fresa-queso','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-fresa-queso' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('fresa-queso','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
       </div>
     </div>
+    <!----Second Row---->
     <div class="row">
-      <!--mamey-->
+      <!-------mamey------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
+            <div class="right">
+              <a id='btn-send-mamey' onclick="sendMessage('btn-send-mamey')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
             <img class="activator" src="img/mamey.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('mamey','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-mamey' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('mamey','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
       </div>
-      <!--queso con zarzamora-->
+      <!-------queso-zarzamora------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="img/queso con zarzamora.png">
+            <div class="right">
+              <a id='btn-send-queso-zarzamora' onclick="sendMessage('btn-send-queso-zarzamora')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
+            <img class="activator" src="img/queso-zarzamora.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('queso-zarzamora','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-queso-zarzamora' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('queso-zarzamora','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
-      </div>
-      <!--piña coco-->
+      </div>     
+      <!-------piña coco------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="img/piña coco.png">
+            <div class="right">
+              <a id='btn-send-pina-coco' onclick="sendMessage('btn-send-pina-coco')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
+            <img class="activator" src="img/pina-coco.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('pina-coco','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-pina-coco' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('pina-coco','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
-      </div>
-    </div> <!--Row-->
+      </div>                        
+    </div>
+    <!----3rd Row---->
     <div class="row">
-      <!--arroz con leche-->
+      <!-------arroz-leche------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="img/arroz con leche.png">
+            <div class="right">
+              <a id='btn-send-arroz-leche' onclick="sendMessage('btn-send-arroz-leche')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
+            <img class="activator" src="img/arroz-leche.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('arroz-leche','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-arroz-leche' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('arroz-leche','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
       </div>
-      <!--café-->
+      <!-------cafe------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
+            <div class="right">
+              <a id='btn-send-cafe' onclick="sendMessage('btn-send-cafe')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
             <img class="activator" src="img/cafe.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('cafe','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-cafe' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('cafe','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
-      </div>
-      <!--chocolate con galleta-->
+      </div>      
+      <!-------chocolate-galleta------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="img/chocolate con galleta.png">
+            <div class="right">
+              <a id='btn-send-chocolate-galleta' onclick="sendMessage('btn-send-chocolate-galleta')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
+            <img class="activator" src="img/chocolate-galleta.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('chocolate-galleta','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-chocolate-galleta' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('chocolate-galleta','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
-      </div>
-    </div> <!--Row-->    
+      </div>                                   
+    </div>
     <div class="row">
-      <!--pay de limon-->
+      <!-------pay-limon------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="img/pay de limon.png">
+            <div class="right">
+              <a id='btn-send-pay-limon' onclick="sendMessage('btn-send-pay-limon')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
+            <img class="activator" src="img/pay-limon.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('pay-limon','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-pay-limon' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('pay-limon','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
-      </div>
-      <!--nuez-->
+      </div>           
+      <!-------nuez------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
+            <div class="right">
+              <a id='btn-send-nuez' onclick="sendMessage('btn-send-nuez')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
             <img class="activator" src="img/nuez.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('nuez','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-nuez' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('nuez','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
-      </div>
-      <!--mango con chile-->
+      </div> 
+      <!-------mango-chile------->      
       <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="img/mango con chile.png">
+            <div class="right">
+              <a id='btn-send-mango-chile' onclick="sendMessage('btn-send-mango-chile')" href="#" class="waves-effect waves-light btn-small pink accent-2"><i class="fab fa-whatsapp"></i>Enviar pedido</a>
+            </div>
+            <img class="activator" src="img/mango-chile.png">
+            <span class="card-title"></span>
+              <div class="center">
+                <button onclick="addQty('mango-chile','+')" class="waves-effect waves-light btn-small pink accent-2">Agregar</button>
+                <button id='btn-mango-chile' class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">add_shopping_cart</i></button>
+                <button onclick="addQty('mango-chile','-')" class="waves-effect waves-light btn-small pink accent-2"><i class="material-icons left">delete</i></button>
+              </div>
           </div>
         </div>           
-      </div>
-    </div> <!--Row-->    
-  </section><!--agenda de la semana-->
-
+      </div>       
+    </div>
+  </section>
+          
   <!--Seccion 2-->
   <section class="container">
     <div class="row">
@@ -177,7 +343,7 @@
               Magdalena Tlaltelulco, Acuamanala, Acuitlapilco, Teolocholco<br>
               Zaculpan, San Juan Huactizco, Tepeyanco, <br>
               Mazatecochco, Xiloxoxtla, Quilehtla, Ayometla <hr>
-              <a href="https://api.whatsapp.com/send?phone=+522462333225" class="btn-small pink accent-2"><i class="fab fa-whatsapp"></i> WhatsApp </a><hr>
+              <a href="https://api.whatsapp.com/send?phone=522462333225" class="btn-small pink accent-2"><i class="fab fa-whatsapp"></i> WhatsApp </a><hr>
             </div>
           </p>
         </div> <!--icon-block-->
@@ -191,7 +357,7 @@
               Dirección: Av. Pedregal No. 21 Sección 1era<br>
               C.P. 90850 <br>
               San Luis Teolocholco, Tlaxcala <br>
-              <a href="tel:+2462333225" class="btn-small pink accent-2"><i class="material-icons">local_phone</i>2462333225</a> <hr>
+              <a href="tel:2462333225" class="btn-small pink accent-2"><i class="material-icons">local_phone</i>2462333225</a> <hr>
               <a href="mailto:willibaldo@gmail.com?subject=Dudas%20de%20las%20paletas&body=%20" class="btn-small pink accent-2"><i class="material-icons">markunread</i> Correo</a> <hr>
             </div>
           </p>
